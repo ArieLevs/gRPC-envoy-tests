@@ -1,0 +1,11 @@
+syntax = "proto3";
+package messenger_test;
+
+message MyMessage {
+    string string_1 = 1;
+    string string_2 = 3;
+}
+
+service PyMessenger {
+    rpc MessageLength(MyMessage) returns (MyMessage) {}
+}
