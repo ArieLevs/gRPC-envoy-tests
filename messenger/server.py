@@ -11,7 +11,7 @@ import messenger_pb2
 import messenger_pb2_grpc
 
 # listen on port default port 50505
-SERVER_PORT = os.environ.get('server_port', '50505')
+SERVER_PORT = os.environ.get('SERVER_PORT', '50505')
 LOGGER = logging.getLogger(__name__)
 
 
@@ -21,7 +21,6 @@ class PyMessengerServicer(messenger_pb2_grpc.PyMessengerServicer):
     # the request and response are of type messenger_pb2.MyMessage
     def MessageLength(self, request, context):
         response = messenger_pb2.MyMessage()
-        print(request)
         print(type(request))
         response.string_1 = "This is server v1, The length of clients message is: {}".format(len(request.string_1))
         return response

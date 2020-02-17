@@ -8,8 +8,8 @@ import grpc
 import messenger_pb2
 import messenger_pb2_grpc
 
-SERVER_HOST = os.environ.get('server_host', 'localhost')
-SERVER_PORT = os.environ.get('server_port', '50505')
+SERVER_HOST = os.environ.get('SERVER_HOST', 'localhost')
+SERVER_PORT = os.environ.get('SERVER_PORT', '50505')
 
 
 def _run_client(host, port, word):
