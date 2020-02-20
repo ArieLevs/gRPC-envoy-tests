@@ -32,8 +32,10 @@ def _run_client(host, port, word):
 
     # sent the request to the server
     try:
-        response = stub.MessageLength(message)
-        print(response)
+        while True:
+            response = stub.MessageLength(message)
+            print(response)
+            time.sleep(5)
     except grpc.RpcError as exc:
         print('client failed to execute due to: {}'.format(str(exc)))
 
@@ -45,11 +47,8 @@ def main():
 
     # run_forever
     try:
-        while True:
-            # Send message from client
-
-            _run_client(SERVER_HOST, SERVER_PORT, args['word'])
-            time.sleep(5)
+        # Send message from client
+        _run_client(SERVER_HOST, SERVER_PORT, args['word'])
     except KeyboardInterrupt as exc:
         print('client crashed due to: {}'.format(str(exc)))
         pass
