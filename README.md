@@ -30,3 +30,6 @@ docker run \
     grpc-messenger/grpc-messenger \
     python /messenger/client.py --word arielevs
 ```
+
+## Kubernetes
+Install [using Helm here](https://github.com/ArieLevs/Kubernetes-Helm-Charts/tree/master/charts/envoy-grpc-test)
